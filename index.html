@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .btn {
+            border: none;
+            border-radius: 70px;
+            width: 300px;
+            height: 80px;
+            background: rgb(129, 41, 188);
+            color: white;
+        }
+
+        .btn:hover {
+            cursor: pointer;
+            background: rgb(177, 54, 181);
+        }
+
+        .modalInternal {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+            margin: 120px;
+        }
+
+        .cancelBtn {
+            border-radius: 50%;
+            margin-right: 10px;
+            margin-top: 10px;
+            position: absolute;
+            border: none;
+            background-color: #cabfa4;
+        }
+
+        .cancelBtn:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // create element
+        let h1 = document.createElement("h1")
+        let p = document.createElement("p")
+        let hr = document.createElement("hr")
+        let body = document.querySelector("body")
+        let box = document.createElement("div")
+        let button = document.createElement("button")
+        let cancel = document.createElement("button")
+
+
+        // classlistlerim burdadir
+        button.classList.add("btn")
+        cancel.classList.add("cancelBtn")
+        box.classList.add("modalInternal")
+        
+        // text elavelerim 
+        button.textContent = "Click me:))"
+        cancel.textContent = "Cancel"
+        box.style.display = "none"
+        cancel.style.display = "none"
+        h1.textContent = "My Dear Modal task "
+        p.textContent = "I did the task with pleasure. Thank you, dear teachers, for creating this passion :))"
+
+        // klik
+        button.addEventListener("click", function () {
+            box.style.display = "block"
+            box.style.cssText = "width: 600px; height: 130px; border: 8px solid gray;";
+            cancel.style.display = "block"
+            box.style.backgroundColor = "white"
+            button.style.display = "none"
+        });
+        // klik
+        cancel.addEventListener("click", function () {
+            button.style.display = "block"
+            box.style.display = "none"
+        });
+
+        // body-e elave 
+        box.append(h1)
+        box.append(hr)
+        box.append(p)
+        body.append(button)
+        body.append(box)
+        box.append(cancel)
+
+    </script>
+</body>
+
+</html>
